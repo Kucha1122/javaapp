@@ -2,7 +2,7 @@ import java.sql.*;
 
 public class DockerConnectMySQL {
    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-   static final String DB_URL = "jdbc:mysql://db:3306/MK";
+   static final String DB_URL = "jdbc:mysql://10.0.10.3:3306/MK";
 
    static final String USER = "mkuspit";
    static final String PASS = "mkuspit";
