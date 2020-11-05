@@ -15,24 +15,7 @@ public class DockerConnectMySQL {
 
       System.out.println("Connecting to database...");
       conn = DriverManager.getConnection(DB_URL,USER,PASS);
-
-      stmt = conn.createStatement();
-      String sql;
-      sql = "SELECT PersonID, FirstName, LastName, Address, City FROM Persons";
-      ResultSet rs = stmt.executeQuery(sql);
-
-      while(rs.next()){
-         int id  = rs.getInt("PersonID");
-         String first = rs.getString("FirstName");
-         String last = rs.getString("LastName");
-		 String address = rs.getString("Address");
-		 String city = rs.getString("City");
-
-         System.out.println("ID: " + id);
-         System.out.println(", First: " + first);
-         System.out.println(", Last: " + last);
-		 System.out.println(", Address: " + address);
-		 System.out.println(", City: " + city);
+	   
       }
       rs.close();
       stmt.close();
