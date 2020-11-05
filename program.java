@@ -7,12 +7,12 @@ public class program {
    static final String USER = "mkuspit";
    static final String PASS = "mkuspit";
    
-   public static void main(String[] args) {
+   public static void main(String[] args) throws SQLException {
       Connection conn = null;
       Statement stmt = null;
       Connection con = DriverManager.getConnection(DB_URL,USER,PASS);
 
-      Statement stmt = con.createStatement();
+      stmt = con.createStatement();
       ResultSet rs = stmt.executeQuery("show tables;");
       System.out.println("test");
    }
