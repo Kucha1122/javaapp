@@ -8,16 +8,12 @@ public class DockerConnectMySQL {
    static final String PASS = "mkuspit";
    
    public static void main(String[] args) {
-   Connection conn = null;
-   Statement stmt = null;
-   Connection con = DriverManager.getConnection("jdbc:myDriver:MK",USER,PASS);
+      Connection conn = null;
+      Statement stmt = null;
+      Connection con = DriverManager.getConnection(DB_URL,USER,PASS);
 
-  Statement stmt = con.createStatement();
-  ResultSet rs = stmt.executeQuery("show tables;");
-
-while (rs.next()) {
-    String s = rs.getString("b");
-    System.out.println(s);
-    
-  }
+      Statement stmt = con.createStatement();
+      ResultSet rs = stmt.executeQuery("show tables;");
+      System.out.println("test");
+   }
 }
