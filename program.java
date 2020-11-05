@@ -10,35 +10,14 @@ public class DockerConnectMySQL {
    public static void main(String[] args) {
    Connection conn = null;
    Statement stmt = null;
-   try{
-      Class.forName("com.mysql.jdbc.Driver");
+   Connection con = DriverManager.getConnection("jdbc:myDriver:MK",USER,PASS);
 
-      System.out.println("Connecting to database...");
-      conn = DriverManager.getConnection(DB_URL,USER,PASS);
-      stmt = conn.createStatement();
-	Scanner s = new Scanner(System.in);
-	   s.nextInt()
-	   
-      }
-      rs.close();
-      stmt.close();
-      conn.close();
-   }catch(SQLException se){
-      se.printStackTrace();
-   }catch(Exception e){
-      e.printStackTrace();
-   }finally{
-      try{
-         if(stmt!=null)
-            stmt.close();
-      }catch(SQLException se2){
-      }
-      try{
-         if(conn!=null)
-            conn.close();
-      }catch(SQLException se){
-         se.printStackTrace();
-      }
-   }
- }
+  Statement stmt = con.createStatement();
+  ResultSet rs = stmt.executeQuery("show tables;");
+
+while (rs.next()) {
+    String s = rs.getString("b");
+    System.out.println(s);
+    
+  }
 }
