@@ -2,7 +2,7 @@ import java.sql.*;
 
 public class DockerConnectMySQL {
    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-   static final String DB_URL = "jdbc:mysql://10.0.10.3:3306/MK";
+   static final String DB_URL = "jdbc:mysql://10.0.10.3:3306/MK?maxReconnects=10&useUnicode=true&characterEncoding=UTF8";
 
    static final String USER = "mkuspit";
    static final String PASS = "mkuspit";
@@ -16,6 +16,8 @@ public class DockerConnectMySQL {
       System.out.println("Connecting to database...");
       conn = DriverManager.getConnection(DB_URL,USER,PASS);
       stmt = conn.createStatement();
+	Scanner s = new Scanner(System.in);
+	   s.nextInt()
 	   
       }
       rs.close();
